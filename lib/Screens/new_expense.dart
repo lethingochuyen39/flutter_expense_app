@@ -30,7 +30,7 @@ class _NewExpenseState extends State<NewExpense> {
         return Theme(
           data: ThemeData.light().copyWith(
             colorScheme: const ColorScheme.light(
-              primary: Color.fromARGB(255, 6, 185, 250),
+              primary: Color.fromARGB(255, 96, 59, 181),
               onPrimary: Colors.white,
             ),
           ),
