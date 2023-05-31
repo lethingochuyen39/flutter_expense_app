@@ -2,13 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'Screens/expense.dart';
 
-// void main() {
-//   runApp(MaterialApp(
-//     theme: ThemeData(useMaterial3: true, debugShowCheckedModeBanner: false),
-//     home: const Expenses(),
-//   ));
-// }
-
 void main() {
   runApp(const MyApp());
 }
@@ -20,7 +13,7 @@ var kColorScheme = ColorScheme.fromSeed(
 
 var kDarkColorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
-  seedColor: Color.fromARGB(255, 233, 30, 99),
+  seedColor: const Color.fromARGB(255, 233, 30, 99),
 );
 
 class MyApp extends StatelessWidget {
