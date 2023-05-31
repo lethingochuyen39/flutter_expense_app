@@ -3,6 +3,8 @@ import 'package:expense_app/Screens/new_expense.dart';
 import 'package:expense_app/models/expense.dart';
 import 'package:flutter/material.dart';
 
+import 'chart/chart.dart';
+
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
 
@@ -84,7 +86,7 @@ class _ExpensesState extends State<Expenses> {
         ],
       ),
       body: Column(children: [
-        const Text('The chart'),
+        Chart(expenses: _expenses),
         //truyền cái list vào
         Expanded(
           child: mainContent,
