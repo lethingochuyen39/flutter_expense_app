@@ -17,14 +17,27 @@ class _NewExpenseState extends State<NewExpense> {
   DateTime? _selectedDate;
   Category _selectedCategory = Category.leisure;
 
+  //hiển thị hộp thoại chọn ngày
   void _presentDatePicker() async {
     final now = DateTime.now();
     final firstDate = DateTime(now.year - 1, now.month, now.day);
     final pickedDatte = await showDatePicker(
-        context: context,
-        initialDate: now,
-        firstDate: firstDate, //bắt đầu - lùi một năm
-        lastDate: now); //hiện tại
+      context: context,
+      initialDate: now,
+      firstDate: firstDate, //bắt đầu - lùi một năm
+      lastDate: now,
+      builder: (BuildContext context, Widget? child) {
+        return Theme(
+          data: ThemeData.light().copyWith(
+            colorScheme: const ColorScheme.light(
+              primary: Color.fromARGB(255, 96, 59, 181),
+              onPrimary: Colors.white,
+            ),
+          ),
+          child: child!,
+        );
+      },
+    ); //hiện tại
 
     setState(() {
       _selectedDate = pickedDatte; //gắn giá trị biến chọn ngày
@@ -69,7 +82,7 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16, 48, 16, 16),
       child: Column(
         children: [
           TextField(
